@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CET138 Full Stack Development ePortfolio – demonstrating HTML, CSS, Bootstrap and JavaScript skills." />
+  <meta name="author" content="Sneha Shah
+" />
+  <meta name="keywords" content="CET138, full stack development, ePortfolio, HTML, CSS, Bootstrap, JavaScript" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="CET138 ePortfolio | [Student Name]" />
+  <meta property="og:description" content="Full Stack Development Assignment 1 ePortfolio" />
+  <meta property="og:type" content="website" />
+  <title>CET138 ePortfolio | Sneha Shah </title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="index.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        CET138 <span>ePortfolio</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links" aria-label="Site pages">
+        <a href="index.html" class="active">Home</a>
+        <a href="pages/fullstack.html">Full Stack</a>
+        <a href="pages/html.html">HTML</a>
+        <a href="pages/css-page.html">CSS</a>
+        <a href="pages/bootstrap.html">Bootstrap</a>
+        <a href="pages/javascript.html">JavaScript</a>
+        <a href="pages/contact.html">Contact</a>
+        <a href="pages/references.html">References</a>
+      </nav>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════
+       HERO
+  ════════════════════════════════════ -->
+  <section class="hero" id="home" aria-label="Hero section">
+    <div class="hero-inner">
+      <div class="hero-tag">CET138 – Full Stack Development – Assignment 1 – 30% Weight</div>
+      <h1>Developer<br><span>ePortfolio</span></h1>
+      <p class="hero-student">Sneha Shah</p>
+      <p class="hero-meta">Student ID: 250912522 &nbsp;·&nbsp; 19/06/2026 &nbsp;·&nbsp; ISMT College</p>
+      <div class="hero-chips">
+        <span class="chip">HTML5</span>
+        <span class="chip">CSS3</span>
+        <span class="chip">Bootstrap 5</span>
+        <span class="chip">JavaScript ES6+</span>
+        <span class="chip">Node.js</span>
+        <span class="chip">REST APIs</span>
+        <span class="chip">Full Stack</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#sections" class="btn-primary-hero">Explore Portfolio ↓</a>
+        <a href="pages/fullstack.html" class="btn-outline-hero">Section 2: Full Stack →</a>
+      </div>
+    </div>
+    <div class="scroll-down" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       STATS STRIP
+  ════════════════════════════════════ -->
+  <section class="stats-strip" aria-label="Portfolio statistics">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-num" data-target="5">0</div>
+          <div class="stat-label">Portfolio Sections</div>
+        </div>
+        <div>
+          <div class="stat-num" data-target="18">0</div>
+          <div class="stat-label">References Cited</div>
+        </div>
+        <div>
+          <div class="stat-num" data-target="12">0</div>
+          <div class="stat-label">Code Examples</div>
+        </div>
+        <div>
+          <div class="stat-num" data-target="4">0</div>
+          <div class="stat-label">Live Demos</div>
+        </div>
+        <div>
+          <div class="stat-num" data-target="30">0</div>
+          <div class="stat-label">% Module Mark</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       PORTFOLIO SECTIONS OVERVIEW
+  ════════════════════════════════════ -->
+  <section class="section" id="sections" aria-labelledby="sections-heading">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Assessment Sections</div>
+        <h2 class="section-title" id="sections-heading">Five Core Competencies</h2>
+        <p class="section-desc">Each section demonstrates both theoretical understanding and working code examples, directly mapped to the CET138 grading rubric.</p>
+      </div>
+
+      <div class="cards-grid" style="margin-top:2.5rem;">
+
+        <a href="pages/fullstack.html" class="port-card reveal" aria-label="Section 2: Full Stack Development">
+          <div class="port-card-icon" style="background:linear-gradient(135deg,#1F3864,#2E5FA3)">🗄️</div>
+          <div class="port-card-num">01</div>
+          <h4>Full Stack Development</h4>
+          <p>The three-layer architecture — frontend, backend, and database. How layers communicate via HTTP and RESTful APIs.</p>
+          <div class="port-card-tags"><span>Architecture</span><span>REST API</span><span>MERN</span><span>LAMP</span></div>
+        </a>
+
+        <a href="pages/html.html" class="port-card reveal" aria-label="Section 3: HTML">
+          <div class="port-card-icon" style="background:linear-gradient(135deg,#7B341E,#C05621)">📄</div>
+          <div class="port-card-num">02</div>
+          <h4>HTML</h4>
+          <p>HyperText Markup Language — structural foundation of all web pages. Semantic HTML5, forms, accessibility, metadata.</p>
+          <div class="port-card-tags"><span>HTML5</span><span>Semantic</span><span>Forms</span><span>A11y</span></div>
+        </a>
+
+        <a href="pages/css-page.html" class="port-card reveal" aria-label="Section 4: CSS">
+          <div class="port-card-icon" style="background:linear-gradient(135deg,#0E6655,#1A9E85)">🎨</div>
+          <div class="port-card-num">03</div>
+          <h4>CSS</h4>
+          <p>Cascading Style Sheets — visual presentation, layout, and responsive design. Box model, Flexbox, Grid, animations.</p>
+          <div class="port-card-tags"><span>CSS3</span><span>Flexbox</span><span>Grid</span><span>Variables</span></div>
+        </a>
+
+        <a href="pages/bootstrap.html" class="port-card reveal" aria-label="Section 5: Bootstrap">
+          <div class="port-card-icon" style="background:linear-gradient(135deg,#6A1B9A,#9C27B0)">⚡</div>
+          <div class="port-card-num">04</div>
+          <h4>Bootstrap Framework</h4>
+          <p>The world's most popular CSS framework. 12-column grid, responsive components, utility classes, and ready-made UI.</p>
+          <div class="port-card-tags"><span>Bootstrap 5</span><span>Grid</span><span>Components</span><span>Utilities</span></div>
+        </a>
+
+        <a href="pages/javascript.html" class="port-card reveal" aria-label="Section 6: JavaScript">
+          <div class="port-card-icon" style="background:linear-gradient(135deg,#B45309,#D97706)">⚙️</div>
+          <div class="port-card-num">05</div>
+          <h4>JavaScript</h4>
+          <p>The programming language of the web. DOM manipulation, events, async/await, fetch API, and Node.js server-side examples.</p>
+          <div class="port-card-tags"><span>ES6+</span><span>Async/Await</span><span>DOM</span><span>Node.js</span></div>
+        </a>
+
+        <a href="pages/references.html" class="port-card reveal" aria-label="References">
+          <div class="port-card-icon" style="background:linear-gradient(135deg,#1E293B,#334155)">📚</div>
+          <div class="port-card-num" style="font-size:1.5rem;">REF</div>
+          <h4>References</h4>
+          <p>18 Harvard-formatted academic and technical references cited across all five portfolio sections.</p>
+          <div class="port-card-tags"><span>Harvard Style</span><span>18 Sources</span><span>Academic</span></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       LIVE INTERACTIVE DEMOS
+  ════════════════════════════════════ -->
+  <section class="section section--alt" aria-labelledby="demos-heading">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Try It Now</div>
+        <h2 class="section-title" id="demos-heading">Live Interactive Demos</h2>
+        <p class="section-desc">These widgets are built entirely with the technologies covered in this portfolio — no frameworks, just HTML, CSS, and vanilla JavaScript.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:2.5rem;">
+
+        <!-- Colour Box Demo -->
+        <div class="demo-widget reveal">
+          <div class="demo-widget-header">
+            <span>● ● ●</span>&nbsp; JavaScript — DOM Manipulation
+          </div>
+          <div class="demo-widget-body">
+            <p style="font-size:.88rem;color:#64748B;margin-bottom:1rem;">Click the button to change the background colour using JavaScript DOM manipulation and event listeners.</p>
+            <div class="colour-box" id="colourBox" onclick="changeColour()" role="button" tabindex="0" aria-label="Click to change colour">Click to change colour!</div>
+            <button onclick="changeColour()" style="width:100%;margin-top:.75rem;background:#2E5FA3;color:#fff;border:none;padding:.6rem;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem;">Change Colour</button>
+          </div>
+        </div>
+
+        <!-- Counter Demo -->
+        <div class="demo-widget reveal">
+          <div class="demo-widget-header">
+            <span>● ● ●</span>&nbsp; JavaScript — State Management
+          </div>
+          <div class="demo-widget-body">
+            <p style="font-size:.88rem;color:#64748B;margin-bottom:1rem;">An interactive counter demonstrating event listeners, DOM updates, and conditional styling.</p>
+            <span class="counter-num" id="counterNum">0</span>
+            <div class="counter-btns">
+              <button class="btn-cnt dec" onclick="updateCounter(-1)">− Decrement</button>
+              <button class="btn-cnt inc" onclick="updateCounter(1)">+ Increment</button>
+              <button class="btn-cnt rst" onclick="resetCounter()">Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Todo List Demo -->
+        <div class="demo-widget reveal">
+          <div class="demo-widget-header">
+            <span>● ● ●</span>&nbsp; JavaScript — Dynamic DOM
+          </div>
+          <div class="demo-widget-body">
+            <p style="font-size:.88rem;color:#64748B;margin-bottom:1rem;">A to-do list built with vanilla JavaScript — createElement, event delegation, and classList toggling.</p>
+            <div class="todo-input-row">
+              <input type="text" id="todoInput" placeholder="Add a task…" onkeydown="todoKeydown(event)" aria-label="Task input" />
+              <button class="todo-add-btn" onclick="addTodo()">Add</button>
+            </div>
+            <ul class="todo-list" id="todoList" aria-label="Task list">
+              <li onclick="toggleTodo(this)"><span class="chk">○</span> Learn HTML structure</li>
+              <li onclick="toggleTodo(this)"><span class="chk">○</span> Style with CSS</li>
+              <li onclick="toggleTodo(this)"><span class="chk">○</span> Add Bootstrap components</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CSS Animations Demo -->
+        <div class="demo-widget reveal">
+          <div class="demo-widget-header">
+            <span>● ● ●</span>&nbsp; CSS — Animations &amp; Transitions
+          </div>
+          <div class="demo-widget-body">
+            <p style="font-size:.88rem;color:#64748B;margin-bottom:.5rem;">Pure CSS keyframe animations — no JavaScript required. Spin, pulse, and bounce effects.</p>
+            <div class="anim-demo-box">
+              <div>
+                <div class="box-spin" aria-hidden="true"></div>
+                <p style="text-align:center;font-size:.72rem;color:#64748B;margin-top:.4rem;">@keyframes spin</p>
+              </div>
+              <div>
+                <div class="box-pulse" aria-hidden="true"></div>
+                <p style="text-align:center;font-size:.72rem;color:#64748B;margin-top:.4rem;">@keyframes pulse</p>
+              </div>
+              <div>
+                <div class="box-bounce" aria-hidden="true"></div>
+                <p style="text-align:center;font-size:.72rem;color:#64748B;margin-top:.4rem;">@keyframes bounce</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       TECH STACK
+  ════════════════════════════════════ -->
+  <section class="section" aria-labelledby="tech-heading">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <div class="section-label">Technologies Covered</div>
+        <h2 class="section-title" id="tech-heading">Full Stack Technology Stack</h2>
+        <p class="section-desc" style="margin:0 auto 2rem;">All technologies demonstrated with working code examples throughout this portfolio.</p>
+      </div>
+      <div class="tech-grid reveal">
+        <div class="tech-pill"><span class="dot" style="background:#E34C26;"></span>HTML5</div>
+        <div class="tech-pill"><span class="dot" style="background:#264DE4;"></span>CSS3</div>
+        <div class="tech-pill"><span class="dot" style="background:#7952B3;"></span>Bootstrap 5</div>
+        <div class="tech-pill"><span class="dot" style="background:#F7DF1E;"></span>JavaScript ES6+</div>
+        <div class="tech-pill"><span class="dot" style="background:#339933;"></span>Node.js</div>
+        <div class="tech-pill"><span class="dot" style="background:#000000;"></span>Express.js</div>
+        <div class="tech-pill"><span class="dot" style="background:#4479A1;"></span>MySQL</div>
+        <div class="tech-pill"><span class="dot" style="background:#47A248;"></span>MongoDB</div>
+        <div class="tech-pill"><span class="dot" style="background:#CB3837;"></span>REST APIs</div>
+        <div class="tech-pill"><span class="dot" style="background:#F05032;"></span>Git</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       ASSESSMENT RUBRIC
+  ════════════════════════════════════ -->
+  <section class="section section--alt" aria-labelledby="rubric-heading">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-label">Grading Criteria</div>
+        <h2 class="section-title" id="rubric-heading">Assessment Grading Rubric</h2>
+        <p class="section-desc">CET138 Assignment 1 — 30% of overall module mark. Each section scored out of 20.</p>
+      </div>
+      <div style="overflow-x:auto;margin-top:2rem;" class="reveal">
+        <table class="rubric-table">
+          <caption class="visually-hidden">CET138 Assignment 1 Grading Rubric</caption>
+          <thead>
+            <tr>
+              <th scope="col">Criteria</th>
+              <th scope="col" style="color:#86EFAC;">Excellent (16–20)</th>
+              <th scope="col" style="color:#93C5FD;">Very Good (11–15)</th>
+              <th scope="col" style="color:#67E8F9;">Good (6–10)</th>
+              <th scope="col" style="color:#FCD34D;">Minimal (1–5)</th>
+              <th scope="col" style="color:#FCA5A5;">No Evidence (0)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Full Stack Development</td>
+              <td>Full understanding demonstrated. Evidence is thorough and complete.</td>
+              <td>Solid understanding with minor gaps or slight inconsistencies.</td>
+              <td>Partial understanding; evidence might be lacking or not fully functional.</td>
+              <td>Minimal understanding; evidence below the required level.</td>
+              <td>No evidence provided.</td>
+            </tr>
+            <tr>
+              <td>HTML</td>
+              <td>Full understanding demonstrated. Evidence is thorough and complete.</td>
+              <td>Solid understanding with minor gaps or slight inconsistencies.</td>
+              <td>Partial understanding; evidence might be lacking or not fully functional.</td>
+              <td>Minimal understanding; evidence below the required level.</td>
+              <td>No evidence provided.</td>
+            </tr>
+            <tr>
+              <td>CSS</td>
+              <td>Full understanding demonstrated. Evidence is thorough and complete.</td>
+              <td>Solid understanding with minor gaps or slight inconsistencies.</td>
+              <td>Partial understanding; evidence might be lacking or not fully functional.</td>
+              <td>Minimal understanding; evidence below the required level.</td>
+              <td>No evidence provided.</td>
+            </tr>
+            <tr>
+              <td>Bootstrap Framework</td>
+              <td>Full understanding demonstrated. Evidence is thorough and complete.</td>
+              <td>Solid understanding with minor gaps or slight inconsistencies.</td>
+              <td>Partial understanding; evidence might be lacking or not fully functional.</td>
+              <td>Minimal understanding; evidence below the required level.</td>
+              <td>No evidence provided.</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>Full understanding demonstrated. Evidence is thorough and complete.</td>
+              <td>Solid understanding with minor gaps or slight inconsistencies.</td>
+              <td>Partial understanding; evidence might be lacking or not fully functional.</td>
+              <td>Minimal understanding; evidence below the required level.</td>
+              <td>No evidence provided.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            &nbsp;CET138 <span>ePortfolio</span>
+          </div>
+          <p class="footer-desc">Sneha Shah<br/>Student ID: 250912522<br/>CET138 – Full Stack Development<br/>ISMT College Australia</p>
+        </div>
+        <div>
+          <div class="footer-heading">Sections</div>
+          <ul class="footer-links">
+            <li><a href="pages/fullstack.html">Full Stack Dev</a></li>
+            <li><a href="pages/html.html">HTML</a></li>
+            <li><a href="pages/css-page.html">CSS</a></li>
+            <li><a href="pages/bootstrap.html">Bootstrap</a></li>
+            <li><a href="pages/javascript.html">JavaScript</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Pages</div>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/contact.html">Contact &amp; Location</a></li>
+            <li><a href="pages/references.html">References</a></li>
+            <li><a href="pages/about.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Resources</div>
+          <ul class="footer-links">
+            <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs ↗</a></li>
+            <li><a href="https://getbootstrap.com" target="_blank" rel="noopener">Bootstrap Docs ↗</a></li>
+            <li><a href="https://www.w3.org" target="_blank" rel="noopener">W3C ↗</a></li>
+            <li><a href="https://jwt.io" target="_blank" rel="noopener">JWT.io ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 Sneha Shah — CET138 Full Stack Development ePortfolio. All rights reserved.</p>
+        <div class="footer-tech">
+          <span>HTML5</span><span>CSS3</span><span>Bootstrap 5</span><span>JavaScript ES6+</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

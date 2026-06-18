@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The three-tier architecture — frontend, backend, and database — and how they communicate through HTTP and RESTful APIs." />
+  <meta name="author" content="[Student Name]" />
+  <title>Full Stack Development | CET138 ePortfolio</title>
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="../index.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        CET138 <span>ePortfolio</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links" aria-label="Site pages">
+        <a href="../index.html">Home</a>
+        <a href="fullstack.html">Full Stack</a>
+        <a href="html.html">HTML</a>
+        <a href="css-page.html">CSS</a>
+        <a href="bootstrap.html">Bootstrap</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="contact.html">Contact</a>
+        <a href="references.html">References</a>
+      </nav>
+    </div>
+  </nav>
+
+  <header class="page-hero" role="banner">
+    <div class="container">
+      <div class="page-hero-tag">Section 2 · CET138 ePortfolio</div>
+      <h1>What is Full Stack Development?</h1>
+      <p>The three-tier architecture — frontend, backend, and database — and how they communicate through HTTP and RESTful APIs.</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Full Stack Development</span>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="section" aria-labelledby="fs-def">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 2 · Definition</div>
+          <h2 class="section-title" id="fs-def">What is Full Stack Development?</h2>
+          <p>Full stack development refers to the practice of designing, building, and maintaining both the client-facing (frontend) and server-side (backend) layers of a web application, along with the database layer. A developer who works across all of these layers is referred to as a full stack developer <cite>(Mead 2019, p.&nbsp;12)</cite>.</p>
+          <p style="margin-top:1rem;">The term 'stack' refers to the collection of technologies used to build the application, typically grouped into three tiers: the presentation layer (what the user sees), the logic layer (how the application behaves), and the data layer (where data is stored). According to Duckett (2014, p.&nbsp;6), the separation of these concerns is a foundational principle of modern software architecture.</p>
+        </div>
+
+        <div class="reveal" style="margin-top:2rem;">
+          <h3 style="color:#1F3864;font-size:1.15rem;font-weight:700;margin-bottom:1rem;">The Three Layers of a Web Application</h3>
+          <table class="data-table">
+            <caption class="visually-hidden">Three layers of a web application</caption>
+            <thead><tr><th>Layer</th><th>Technology Examples</th><th>Role in the Application</th></tr></thead>
+            <tbody>
+              <tr><td>Frontend (Client-Side)</td><td>HTML, CSS, JavaScript, React, Vue.js</td><td>Controls what the user sees and interacts with in the browser</td></tr>
+              <tr><td>Backend (Server-Side)</td><td>Node.js, Express, Python, PHP, Ruby</td><td>Handles business logic, processes requests, communicates with database</td></tr>
+              <tr><td>Database (Data Layer)</td><td>MySQL, PostgreSQL, MongoDB, SQLite</td><td>Stores, retrieves, and manages persistent application data</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="fs-comm">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 2.3 · Communication</div>
+          <h2 class="section-title" id="fs-comm">How the Layers Communicate</h2>
+          <p>The three layers communicate through a defined request-response cycle. When a user interacts with the frontend — for example, submitting a login form — the browser sends an HTTP request to the backend server. The server processes the request, queries the database if needed, and returns an HTTP response (usually JSON data) back to the frontend <cite>(Mozilla Developer Network 2024)</cite>.</p>
+        </div>
+        <div class="info-box success reveal" style="margin-top:1.5rem;">
+          <p><strong>Example HTTP Request Cycle:</strong></p>
+          <ol style="margin:.5rem 0 0 1.25rem;">
+            <li>User clicks 'Login' on the frontend form</li>
+            <li>Browser sends <code>POST /api/login</code> HTTP Request with credentials</li>
+            <li>Backend validates credentials against the database</li>
+            <li>Database returns the user record to the backend</li>
+            <li>Backend signs a JWT token and sends <code>200 OK</code> HTTP Response</li>
+            <li>Frontend stores the token and redirects to the dashboard</li>
+          </ol>
+        </div>
+
+        <div class="reveal" style="margin-top:2rem;">
+          <h3 style="color:#1F3864;font-weight:700;font-size:1.05rem;margin-bottom:.75rem;">Frontend Code — fetch() API</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-title">login.js</span><span class="code-lang">JavaScript</span></div>
+            <div class="code-body"><pre><span class="cm">// Frontend: Send a login request to the backend API</span>
+<span class="kw">async function</span> <span class="fn">loginUser</span>(email, password) {
+  <span class="kw">const</span> response = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">'/api/login'</span>, {
+    method:  <span class="str">'POST'</span>,
+    headers: { <span class="str">'Content-Type'</span>: <span class="str">'application/json'</span> },
+    body:    JSON.<span class="fn">stringify</span>({ email, password })
+  });
+  <span class="kw">const</span> data = <span class="kw">await</span> response.<span class="fn">json</span>();
+
+  <span class="kw">if</span> (data.success) {
+    localStorage.<span class="fn">setItem</span>(<span class="str">'token'</span>, data.token);
+    window.location.href = <span class="str">'/dashboard'</span>;
+  } <span class="kw">else</span> {
+    <span class="fn">alert</span>(<span class="str">'Login failed: '</span> + data.message);
+  }
+}</pre></div>
+          </div>
+        </div>
+
+        <div class="reveal">
+          <h3 style="color:#1F3864;font-weight:700;font-size:1.05rem;margin-bottom:.75rem;">Backend Code — Node.js / Express</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-title">server.js</span><span class="code-lang">Node.js</span></div>
+            <div class="code-body"><pre><span class="kw">const</span> express = <span class="fn">require</span>(<span class="str">'express'</span>);
+<span class="kw">const</span> bcrypt  = <span class="fn">require</span>(<span class="str">'bcrypt'</span>);
+<span class="kw">const</span> jwt     = <span class="fn">require</span>(<span class="str">'jsonwebtoken'</span>);
+<span class="kw">const</span> app     = <span class="fn">express</span>();
+
+app.<span class="fn">post</span>(<span class="str">'/api/login'</span>, <span class="kw">async</span> (req, res) => {
+  <span class="kw">const</span> { email, password } = req.body;
+  <span class="kw">const</span> user = <span class="kw">await</span> User.<span class="fn">findOne</span>({ email });
+
+  <span class="kw">if</span> (!user || !<span class="kw">await</span> bcrypt.<span class="fn">compare</span>(password, user.hash)) {
+    <span class="kw">return</span> res.<span class="fn">status</span>(<span class="vl">401</span>).<span class="fn">json</span>({ success: <span class="kw">false</span>, message: <span class="str">'Invalid credentials'</span> });
+  }
+
+  <span class="kw">const</span> token = jwt.<span class="fn">sign</span>({ id: user.id }, process.env.JWT_SECRET, { expiresIn: <span class="str">'24h'</span> });
+  res.<span class="fn">json</span>({ success: <span class="kw">true</span>, token });
+});</pre></div>
+          </div>
+          <p style="font-size:.88rem;color:#64748B;margin-top:.5rem;">Source: Auth0 (2023); Flanagan (2020, p. 375)</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="fs-stacks">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 2.4–2.5 · Stacks</div>
+          <h2 class="section-title" id="fs-stacks">Advantages &amp; Common Technology Stacks</h2>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:1.5rem 0;" class="reveal">
+          <div>
+            <h3 style="color:#15803D;font-weight:700;font-size:1rem;margin-bottom:.75rem;">✔ Advantages</h3>
+            <ul style="list-style:none;padding:0;">
+              <li style="padding:.4rem 0;border-bottom:1px solid #F1F5F9;font-size:.92rem;">Work independently across all layers</li>
+              <li style="padding:.4rem 0;border-bottom:1px solid #F1F5F9;font-size:.92rem;">Better understanding of how components interact</li>
+              <li style="padding:.4rem 0;border-bottom:1px solid #F1F5F9;font-size:.92rem;">Faster end-to-end debugging</li>
+              <li style="padding:.4rem 0;border-bottom:1px solid #F1F5F9;font-size:.92rem;">Highly employable in startups and small teams</li>
+              <li style="padding:.4rem 0;font-size:.92rem;">Reduced need for separate frontend/backend developers</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="color:#DC2626;font-weight:700;font-size:1rem;margin-bottom:.75rem;">✘ Challenges</h3>
+            <ul style="list-style:none;padding:0;">
+              <li style="padding:.4rem 0;border-bottom:1px solid #F1F5F9;font-size:.92rem;">Breadth of knowledge required is very wide</li>
+              <li style="padding:.4rem 0;border-bottom:1px solid #F1F5F9;font-size:.92rem;">Keeping up with rapid changes in each layer</li>
+              <li style="padding:.4rem 0;border-bottom:1px solid #F1F5F9;font-size:.92rem;">Risk of being a 'jack of all trades, master of none'</li>
+              <li style="padding:.4rem 0;border-bottom:1px solid #F1F5F9;font-size:.92rem;">Difficult to specialise deeply in one area</li>
+              <li style="padding:.4rem 0;font-size:.92rem;">Full stack expertise takes significant time to develop</li>
+            </ul>
+          </div>
+        </div>
+        <div class="info-box reveal">
+          <p><strong>Common Technology Stacks (Wieruch 2020, p. 8):</strong></p>
+          <ul style="margin:.5rem 0 0 1.25rem;">
+            <li><strong>MERN:</strong> MongoDB, Express.js, React.js, Node.js — JavaScript full stack</li>
+            <li><strong>LAMP:</strong> Linux, Apache, MySQL, PHP — classic server-side stack</li>
+            <li><strong>MEAN:</strong> MongoDB, Express.js, Angular, Node.js</li>
+            <li><strong>Django + React:</strong> Python backend with React frontend</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>&nbsp;CET138 <span>ePortfolio</span></div>
+          <p class="footer-desc">[Your Full Name Here]<br/>Student ID: [Your Student ID]<br/>CET138 – Full Stack Development<br/>Kent Institute Australia</p>
+        </div>
+        <div>
+          <div class="footer-heading">Sections</div>
+          <ul class="footer-links">
+            <li><a href="fullstack.html">Full Stack Dev</a></li>
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css-page.html">CSS</a></li>
+            <li><a href="bootstrap.html">Bootstrap</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Pages</div>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="contact.html">Contact &amp; Location</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Resources</div>
+          <ul class="footer-links">
+            <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs ↗</a></li>
+            <li><a href="https://getbootstrap.com" target="_blank" rel="noopener">Bootstrap ↗</a></li>
+            <li><a href="https://www.w3.org" target="_blank" rel="noopener">W3C ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 [Your Full Name Here] — CET138 ePortfolio</p>
+        <div class="footer-tech"><span>HTML5</span><span>CSS3</span><span>Bootstrap 5</span><span>JS ES6+</span></div>
+      </div>
+    </div>
+  </footer>
+  <button id="backToTop" aria-label="Back to top">↑</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

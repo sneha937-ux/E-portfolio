@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Semantic HTML5, forms, accessibility, and metadata — the structural foundation of all web pages." />
+  <meta name="author" content="[Student Name]" />
+  <title>HTML | CET138 ePortfolio</title>
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="../index.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        CET138 <span>ePortfolio</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links" aria-label="Site pages">
+        <a href="../index.html">Home</a>
+        <a href="fullstack.html">Full Stack</a>
+        <a href="html.html">HTML</a>
+        <a href="css-page.html">CSS</a>
+        <a href="bootstrap.html">Bootstrap</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="contact.html">Contact</a>
+        <a href="references.html">References</a>
+      </nav>
+    </div>
+  </nav>
+
+  <header class="page-hero" role="banner">
+    <div class="container">
+      <div class="page-hero-tag">Section 3 · CET138 ePortfolio</div>
+      <h1>HTML — HyperText Markup Language</h1>
+      <p>Semantic HTML5, forms, accessibility, and metadata — the structural foundation of all web pages.</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">HTML</span>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="section" aria-labelledby="html-def">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 3.1 · Definition</div>
+          <h2 class="section-title" id="html-def">What is HTML?</h2>
+          <p>HTML (HyperText Markup Language) is the standard language used to create and structure content on the web. It was first proposed by Tim Berners-Lee in 1991 and has since evolved through multiple versions, with HTML5 being the current standard <cite>(W3C 2014)</cite>. HTML defines the structure and meaning of web content using a system of nested elements represented by tags. It is not a programming language — it does not perform logic — but it is the essential skeleton upon which all web pages are built <cite>(Duckett 2011, p. 2)</cite>.</p>
+        </div>
+
+        <div class="reveal" style="margin-top:2rem;">
+          <h3 style="color:#1F3864;font-weight:700;font-size:1.05rem;margin-bottom:1rem;">Key HTML Concepts</h3>
+          <table class="data-table">
+            <thead><tr><th>Concept</th><th>Description</th><th>Example Element</th></tr></thead>
+            <tbody>
+              <tr><td>Elements</td><td>The basic building blocks of an HTML document</td><td><code>&lt;p&gt;, &lt;div&gt;, &lt;span&gt;, &lt;h1&gt;</code></td></tr>
+              <tr><td>Attributes</td><td>Provide additional information about elements</td><td><code>href, src, class, id, alt</code></td></tr>
+              <tr><td>Semantic HTML</td><td>Tags that convey meaning about their content</td><td><code>&lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;footer&gt;</code></td></tr>
+              <tr><td>Forms</td><td>Collect user input and send it to a server</td><td><code>&lt;form&gt;, &lt;input&gt;, &lt;select&gt;</code></td></tr>
+              <tr><td>Links &amp; Media</td><td>Connect pages and embed images/video/audio</td><td><code>&lt;a&gt;, &lt;img&gt;, &lt;video&gt;</code></td></tr>
+              <tr><td>Tables</td><td>Display structured tabular data</td><td><code>&lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</code></td></tr>
+              <tr><td>Metadata</td><td>Information about the document for browsers</td><td><code>&lt;meta&gt;, &lt;title&gt;, &lt;link&gt;</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="html-semantic">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 3.3 · Semantic HTML5</div>
+          <h2 class="section-title" id="html-semantic">Semantic HTML5</h2>
+          <p>Semantic HTML5 introduced elements that carry meaning about their role in the page structure. Prior to HTML5, developers used generic <code>&lt;div&gt;</code> elements for layout. Semantic elements improve accessibility (screen readers can interpret them), improve SEO, and make code more maintainable <cite>(Pilgrim 2010, p. 21)</cite>.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;" class="reveal">
+          <div>
+            <h3 style="color:#DC2626;font-weight:700;font-size:.95rem;margin-bottom:.75rem;">✘ Non-Semantic (Before HTML5)</h3>
+            <div class="code-block">
+              <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-lang">Old HTML</span></div>
+              <div class="code-body"><pre><span class="tg">&lt;div</span> <span class="at">id</span>=<span class="str">"header"</span><span class="tg">&gt;</span>...<span class="tg">&lt;/div&gt;</span>
+<span class="tg">&lt;div</span> <span class="at">id</span>=<span class="str">"nav"</span><span class="tg">&gt;</span>...<span class="tg">&lt;/div&gt;</span>
+<span class="tg">&lt;div</span> <span class="at">id</span>=<span class="str">"main"</span><span class="tg">&gt;</span>...<span class="tg">&lt;/div&gt;</span>
+<span class="tg">&lt;div</span> <span class="at">class</span>=<span class="str">"article"</span><span class="tg">&gt;</span>...<span class="tg">&lt;/div&gt;</span>
+<span class="tg">&lt;div</span> <span class="at">id</span>=<span class="str">"sidebar"</span><span class="tg">&gt;</span>...<span class="tg">&lt;/div&gt;</span>
+<span class="tg">&lt;div</span> <span class="at">id</span>=<span class="str">"footer"</span><span class="tg">&gt;</span>...<span class="tg">&lt;/div&gt;</span></pre></div>
+            </div>
+          </div>
+          <div>
+            <h3 style="color:#15803D;font-weight:700;font-size:.95rem;margin-bottom:.75rem;">✔ Semantic HTML5 (Current Best Practice)</h3>
+            <div class="code-block">
+              <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-lang">HTML5</span></div>
+              <div class="code-body"><pre><span class="tg">&lt;header&gt;</span>...<span class="tg">&lt;/header&gt;</span>
+<span class="tg">&lt;nav&gt;</span>...<span class="tg">&lt;/nav&gt;</span>
+<span class="tg">&lt;main&gt;</span>...<span class="tg">&lt;/main&gt;</span>
+<span class="tg">&lt;article&gt;</span>...<span class="tg">&lt;/article&gt;</span>
+<span class="tg">&lt;aside&gt;</span>...<span class="tg">&lt;/aside&gt;</span>
+<span class="tg">&lt;footer&gt;</span>...<span class="tg">&lt;/footer&gt;</span></pre></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:2rem;">
+          <h3 style="color:#1F3864;font-weight:700;font-size:1.05rem;margin-bottom:.75rem;">Complete Semantic HTML5 Page Example</h3>
+          <div class="code-block">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-title">index.html</span><span class="code-lang">HTML5</span></div>
+            <div class="code-body"><pre><span class="op">&lt;!DOCTYPE html&gt;</span>
+<span class="tg">&lt;html</span> <span class="at">lang</span>=<span class="str">"en"</span><span class="tg">&gt;</span>
+<span class="tg">&lt;head&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">charset</span>=<span class="str">"UTF-8"</span> <span class="tg">/&gt;</span>
+  <span class="tg">&lt;meta</span> <span class="at">name</span>=<span class="str">"viewport"</span> <span class="at">content</span>=<span class="str">"width=device-width, initial-scale=1.0"</span> <span class="tg">/&gt;</span>
+  <span class="tg">&lt;title&gt;</span>Aussie Real Estate | Home<span class="tg">&lt;/title&gt;</span>
+  <span class="tg">&lt;link</span> <span class="at">rel</span>=<span class="str">"stylesheet"</span> <span class="at">href</span>=<span class="str">"styles.css"</span> <span class="tg">/&gt;</span>
+<span class="tg">&lt;/head&gt;</span>
+<span class="tg">&lt;body&gt;</span>
+  <span class="tg">&lt;header&gt;</span>
+    <span class="tg">&lt;nav&gt;</span>
+      <span class="tg">&lt;a</span> <span class="at">href</span>=<span class="str">"/"</span><span class="tg">&gt;</span>Home<span class="tg">&lt;/a&gt;</span>
+      <span class="tg">&lt;a</span> <span class="at">href</span>=<span class="str">"/search"</span><span class="tg">&gt;</span>Search Properties<span class="tg">&lt;/a&gt;</span>
+    <span class="tg">&lt;/nav&gt;</span>
+    <span class="tg">&lt;h1&gt;</span>Find Your Perfect Australian Property<span class="tg">&lt;/h1&gt;</span>
+  <span class="tg">&lt;/header&gt;</span>
+
+  <span class="tg">&lt;main&gt;</span>
+    <span class="tg">&lt;section</span> <span class="at">id</span>=<span class="str">"search"</span><span class="tg">&gt;</span>
+      <span class="tg">&lt;h2&gt;</span>Property Search<span class="tg">&lt;/h2&gt;</span>
+      <span class="tg">&lt;form</span> <span class="at">action</span>=<span class="str">"/results"</span> <span class="at">method</span>=<span class="str">"GET"</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;label</span> <span class="at">for</span>=<span class="str">"suburb"</span><span class="tg">&gt;</span>Suburb or Postcode:<span class="tg">&lt;/label&gt;</span>
+        <span class="tg">&lt;input</span> <span class="at">type</span>=<span class="str">"text"</span> <span class="at">id</span>=<span class="str">"suburb"</span> <span class="at">name</span>=<span class="str">"suburb"</span>
+               <span class="at">placeholder</span>=<span class="str">"e.g. Bondi Beach"</span> <span class="at">required</span> <span class="tg">/&gt;</span>
+        <span class="tg">&lt;button</span> <span class="at">type</span>=<span class="str">"submit"</span><span class="tg">&gt;</span>Search<span class="tg">&lt;/button&gt;</span>
+      <span class="tg">&lt;/form&gt;</span>
+    <span class="tg">&lt;/section&gt;</span>
+  <span class="tg">&lt;/main&gt;</span>
+
+  <span class="tg">&lt;footer&gt;</span>
+    <span class="tg">&lt;p&gt;</span>&amp;copy; 2026 Aussie Real Estate.<span class="tg">&lt;/p&gt;</span>
+  <span class="tg">&lt;/footer&gt;</span>
+<span class="tg">&lt;/body&gt;</span>
+<span class="tg">&lt;/html&gt;</span></pre></div>
+          </div>
+          <p style="font-size:.85rem;color:#64748B;margin-top:.5rem;">Source: W3C (2014); Duckett (2011, p. 2)</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>&nbsp;CET138 <span>ePortfolio</span></div>
+          <p class="footer-desc">[Your Full Name Here]<br/>Student ID: [Your Student ID]<br/>CET138 – Full Stack Development<br/>Kent Institute Australia</p>
+        </div>
+        <div>
+          <div class="footer-heading">Sections</div>
+          <ul class="footer-links">
+            <li><a href="fullstack.html">Full Stack Dev</a></li>
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css-page.html">CSS</a></li>
+            <li><a href="bootstrap.html">Bootstrap</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Pages</div>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="contact.html">Contact &amp; Location</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Resources</div>
+          <ul class="footer-links">
+            <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs ↗</a></li>
+            <li><a href="https://getbootstrap.com" target="_blank" rel="noopener">Bootstrap ↗</a></li>
+            <li><a href="https://www.w3.org" target="_blank" rel="noopener">W3C ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 [Your Full Name Here] — CET138 ePortfolio</p>
+        <div class="footer-tech"><span>HTML5</span><span>CSS3</span><span>Bootstrap 5</span><span>JS ES6+</span></div>
+      </div>
+    </div>
+  </footer>
+  <button id="backToTop" aria-label="Back to top">↑</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

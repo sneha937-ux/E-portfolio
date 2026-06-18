@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DOM manipulation, events, async/await, fetch API, and Node.js server-side development with working live demos." />
+  <meta name="author" content="[Student Name]" />
+  <title>JavaScript | CET138 ePortfolio</title>
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="../index.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        CET138 <span>ePortfolio</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links" aria-label="Site pages">
+        <a href="../index.html">Home</a>
+        <a href="fullstack.html">Full Stack</a>
+        <a href="html.html">HTML</a>
+        <a href="css-page.html">CSS</a>
+        <a href="bootstrap.html">Bootstrap</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="contact.html">Contact</a>
+        <a href="references.html">References</a>
+      </nav>
+    </div>
+  </nav>
+
+  <header class="page-hero" role="banner">
+    <div class="container">
+      <div class="page-hero-tag">Section 6 · CET138 ePortfolio</div>
+      <h1>JavaScript</h1>
+      <p>DOM manipulation, events, async/await, fetch API, and Node.js server-side development with working live demos.</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">JavaScript</span>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="section" aria-labelledby="js-def">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 6.1 · Definition</div>
+          <h2 class="section-title" id="js-def">What is JavaScript?</h2>
+          <p>JavaScript (JS) is a high-level, interpreted, multi-paradigm programming language originally created by Brendan Eich at Netscape in 1995. It is the only programming language that runs natively in web browsers, making it indispensable for adding interactivity to web pages. Since Node.js (2009), JavaScript can also run on the server side, making it a true full stack language <cite>(Flanagan 2020, p. 1)</cite>.</p>
+          <p style="margin-top:.75rem;">JavaScript is the third core technology of the web alongside HTML and CSS: HTML provides structure, CSS provides presentation, and JavaScript provides behaviour and interactivity <cite>(MDN 2024)</cite>. Modern ES6+ introduced arrow functions, template literals, destructuring, async/await, and the Promises API.</p>
+        </div>
+
+        <div class="reveal" style="margin-top:2rem;">
+          <table class="data-table">
+            <thead><tr><th>Concept</th><th>Description</th><th>ES6+ Feature</th></tr></thead>
+            <tbody>
+              <tr><td>Variables</td><td>Store data values</td><td><code>const</code> (immutable), <code>let</code> (mutable)</td></tr>
+              <tr><td>Functions</td><td>Reusable blocks of code</td><td>Arrow functions: <code>const fn = (x) =&gt; x * 2</code></td></tr>
+              <tr><td>Objects &amp; Arrays</td><td>Collections of data</td><td>Destructuring, spread operator, array methods</td></tr>
+              <tr><td>DOM Manipulation</td><td>Interact with HTML elements</td><td><code>document.querySelector()</code>, <code>classList</code></td></tr>
+              <tr><td>Events</td><td>Respond to user actions</td><td><code>addEventListener('click', callback)</code></td></tr>
+              <tr><td>Asynchronous JS</td><td>Handle operations that take time</td><td>Promises, <code>async/await</code>, <code>fetch()</code></td></tr>
+              <tr><td>Error Handling</td><td>Handle unexpected situations</td><td><code>try / catch / finally</code>, <code>throw</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="js-dom">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 6.3 · DOM &amp; Events</div>
+          <h2 class="section-title" id="js-dom">DOM Manipulation &amp; Live Demo</h2>
+          <p>The Document Object Model (DOM) is a tree representation of an HTML page. JavaScript can select, create, modify, and delete DOM elements dynamically. The example below simulates a property search filter using DOM manipulation, events, and array methods.</p>
+        </div>
+
+        <div class="demo-widget reveal" style="margin:1.5rem 0;">
+          <div class="demo-widget-header">● ● ●&nbsp; Live Demo — Property Search Filter (JavaScript DOM + Events)</div>
+          <div class="demo-widget-body">
+            <div style="display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;">
+              <input type="text" id="filterSuburb" placeholder="Filter by suburb…" oninput="filterProperties()"
+                style="flex:1;padding:.5rem .9rem;border:1px solid #CBD5E1;border-radius:8px;font-size:.9rem;outline:none;" aria-label="Filter by suburb" />
+              <select id="filterType" onchange="filterProperties()"
+                style="padding:.5rem .9rem;border:1px solid #CBD5E1;border-radius:8px;font-size:.9rem;background:#fff;" aria-label="Filter by type">
+                <option value="">All Types</option>
+                <option value="sale">For Sale</option>
+                <option value="rent">For Rent</option>
+              </select>
+            </div>
+            <p id="propCount" style="font-size:.82rem;color:#64748B;margin-bottom:.75rem;">Loading…</p>
+            <div id="propGrid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;"></div>
+          </div>
+        </div>
+
+        <div class="code-block reveal">
+          <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-title">search.js</span><span class="code-lang">JavaScript ES6+</span></div>
+          <div class="code-body"><pre><span class="cm">// Array of property objects (from API in production)</span>
+<span class="kw">const</span> properties = [
+  { id:<span class="vl">1</span>, title:<span class="str">'12 Harbour View Rd'</span>, suburb:<span class="str">'Bondi Beach'</span>, type:<span class="str">'sale'</span>, price:<span class="vl">1850000</span> },
+  { id:<span class="vl">2</span>, title:<span class="str">'5/88 Collins St'</span>,   suburb:<span class="str">'Melbourne CBD'</span>, type:<span class="str">'rent'</span>, price:<span class="vl">620</span> },
+  { id:<span class="vl">3</span>, title:<span class="str">'34 Riverside Dr'</span>,  suburb:<span class="str">'South Brisbane'</span>, type:<span class="str">'sale'</span>, price:<span class="vl">975000</span> },
+];
+
+<span class="cm">// Arrow function with template literal</span>
+<span class="kw">const</span> <span class="fn">createCard</span> = (p) => {
+  <span class="kw">const</span> price = p.type === <span class="str">'rent'</span> ? <span class="str">`$${p.price}/wk`</span> : <span class="str">`$${p.price.toLocaleString()}`</span>;
+  <span class="kw">return</span> <span class="str">`&lt;div class="card"&gt;&lt;h5&gt;${p.title}&lt;/h5&gt;&lt;p&gt;${price}&lt;/p&gt;&lt;/div&gt;`</span>;
+};
+
+<span class="cm">// Filter with Array.filter()</span>
+<span class="kw">const</span> <span class="fn">filterProperties</span> = () => {
+  <span class="kw">const</span> suburb = document.<span class="fn">querySelector</span>(<span class="str">'#suburb-input'</span>).value.<span class="fn">toLowerCase</span>();
+  <span class="kw">const</span> filtered = properties.<span class="fn">filter</span>(p => p.suburb.<span class="fn">toLowerCase</span>().<span class="fn">includes</span>(suburb));
+  document.<span class="fn">querySelector</span>(<span class="str">'#grid'</span>).innerHTML = filtered.<span class="fn">map</span>(createCard).<span class="fn">join</span>(<span class="str">''</span>);
+};
+
+<span class="cm">// Event listener</span>
+document.<span class="fn">querySelector</span>(<span class="str">'#suburb-input'</span>)
+        .<span class="fn">addEventListener</span>(<span class="str">'input'</span>, filterProperties);</pre></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="js-async">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 6.4 · Async/Await</div>
+          <h2 class="section-title" id="js-async">Asynchronous JavaScript — fetch() API</h2>
+          <p>Modern web applications constantly communicate with backend APIs. JavaScript handles this through Promises and the <code>async/await</code> syntax. The <code>fetch()</code> function makes HTTP requests. async/await (ES2017) makes asynchronous code readable and maintainable <cite>(Flanagan 2020, p. 375)</cite>.</p>
+        </div>
+        <div class="code-block reveal">
+          <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-title">api.js</span><span class="code-lang">JavaScript ES2017</span></div>
+          <div class="code-body"><pre><span class="kw">async function</span> <span class="fn">fetchProperties</span>(suburb, type) {
+  <span class="kw">try</span> {
+    <span class="kw">const</span> params   = <span class="kw">new</span> <span class="fn">URLSearchParams</span>({ suburb, type });
+    <span class="kw">const</span> response = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="str">`/api/properties?${params}`</span>, {
+      headers: {
+        <span class="str">'Authorization'</span>: <span class="str">`Bearer ${localStorage.<span class="fn">getItem</span>(<span class="str">'token'</span>)}`</span>,
+        <span class="str">'Content-Type'</span>:  <span class="str">'application/json'</span>
+      }
+    });
+
+    <span class="kw">if</span> (!response.ok) <span class="kw">throw new</span> <span class="fn">Error</span>(<span class="str">`HTTP error: ${response.status}`</span>);
+
+    <span class="kw">const</span> data = <span class="kw">await</span> response.<span class="fn">json</span>();
+    <span class="kw">return</span> data.properties;
+
+  } <span class="kw">catch</span> (error) {
+    console.<span class="fn">error</span>(<span class="str">'Failed:'</span>, error);
+    <span class="kw">return</span> [];
+  } <span class="kw">finally</span> {
+    document.<span class="fn">querySelector</span>(<span class="str">'#loading'</span>).classList.<span class="fn">add</span>(<span class="str">'d-none'</span>);
+  }
+}</pre></div>
+        </div>
+
+        <!-- Counter demo -->
+        <div class="demo-widget reveal" style="margin-top:1.5rem;">
+          <div class="demo-widget-header">● ● ●&nbsp; Live Demo — Interactive Counter (Events + State)</div>
+          <div class="demo-widget-body">
+            <p style="font-size:.88rem;color:#64748B;margin-bottom:1rem;">Demonstrating event listeners, state management, and conditional DOM updates.</p>
+            <span class="counter-num" id="counterNum">0</span>
+            <div class="counter-btns">
+              <button class="btn-cnt dec" onclick="updateCounter(-1)" aria-label="Decrement">− Decrement</button>
+              <button class="btn-cnt inc" onclick="updateCounter(1)" aria-label="Increment">+ Increment</button>
+              <button class="btn-cnt rst" onclick="resetCounter()" aria-label="Reset">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>&nbsp;CET138 <span>ePortfolio</span></div>
+          <p class="footer-desc">[Your Full Name Here]<br/>Student ID: [Your Student ID]<br/>CET138 – Full Stack Development<br/>Kent Institute Australia</p>
+        </div>
+        <div>
+          <div class="footer-heading">Sections</div>
+          <ul class="footer-links">
+            <li><a href="fullstack.html">Full Stack Dev</a></li>
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css-page.html">CSS</a></li>
+            <li><a href="bootstrap.html">Bootstrap</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Pages</div>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="contact.html">Contact &amp; Location</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Resources</div>
+          <ul class="footer-links">
+            <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs ↗</a></li>
+            <li><a href="https://getbootstrap.com" target="_blank" rel="noopener">Bootstrap ↗</a></li>
+            <li><a href="https://www.w3.org" target="_blank" rel="noopener">W3C ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 [Your Full Name Here] — CET138 ePortfolio</p>
+        <div class="footer-tech"><span>HTML5</span><span>CSS3</span><span>Bootstrap 5</span><span>JS ES6+</span></div>
+      </div>
+    </div>
+  </footer>
+  <button id="backToTop" aria-label="Back to top">↑</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>

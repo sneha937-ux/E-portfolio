@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The world's most popular CSS framework — 12-column grid, responsive components, utility classes, and ready-made UI." />
+  <meta name="author" content="[Student Name]" />
+  <title>Bootstrap Framework | CET138 ePortfolio</title>
+  <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-inner">
+      <a class="navbar-brand" href="../index.html">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        CET138 <span>ePortfolio</span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links" aria-label="Site pages">
+        <a href="../index.html">Home</a>
+        <a href="fullstack.html">Full Stack</a>
+        <a href="html.html">HTML</a>
+        <a href="css-page.html">CSS</a>
+        <a href="bootstrap.html">Bootstrap</a>
+        <a href="javascript.html">JavaScript</a>
+        <a href="contact.html">Contact</a>
+        <a href="references.html">References</a>
+      </nav>
+    </div>
+  </nav>
+
+  <header class="page-hero" role="banner">
+    <div class="container">
+      <div class="page-hero-tag">Section 5 · CET138 ePortfolio</div>
+      <h1>Bootstrap Framework</h1>
+      <p>The world's most popular CSS framework — 12-column grid, responsive components, utility classes, and ready-made UI.</p>
+    </div>
+  </header>
+
+  <nav class="breadcrumb-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a>
+        <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        <span aria-current="page">Bootstrap</span>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <section class="section" aria-labelledby="bs-def">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 5.1 · Definition</div>
+          <h2 class="section-title" id="bs-def">What is Bootstrap?</h2>
+          <p>Bootstrap is the world's most widely used open-source CSS framework for building responsive, mobile-first web applications. Originally developed at Twitter by Mark Otto and Jacob Thornton in 2010, Bootstrap provides a comprehensive set of pre-built CSS styles, JavaScript components, and a powerful 12-column grid system <cite>(Otto &amp; Thornton 2023)</cite>. According to W3Techs (2024), Bootstrap is used by approximately 19% of all websites globally.</p>
+        </div>
+
+        <div class="reveal" style="margin-top:2rem;">
+          <h3 style="color:#1F3864;font-weight:700;font-size:1.05rem;margin-bottom:1rem;">Core Bootstrap Features</h3>
+          <table class="data-table">
+            <thead><tr><th>Feature</th><th>Description</th><th>Example Usage</th></tr></thead>
+            <tbody>
+              <tr><td>12-Column Grid</td><td>Divides layout into 12 equal columns that can be combined</td><td><code>col-md-6</code> = half width on medium screens</td></tr>
+              <tr><td>Responsive Breakpoints</td><td>Predefined screen size breakpoints for mobile-first design</td><td>xs, sm (≥576), md (≥768), lg (≥992), xl (≥1200)</td></tr>
+              <tr><td>Utility Classes</td><td>Single-purpose classes that apply specific styles</td><td><code>mt-3, d-flex, text-center, bg-primary</code></td></tr>
+              <tr><td>Components</td><td>Pre-styled UI building blocks ready to use</td><td>Navbar, Card, Button, Modal, Badge, Alert</td></tr>
+              <tr><td>JavaScript Plugins</td><td>Interactive components powered by Bootstrap JS</td><td>Modals, Tooltips, Collapse, Toast</td></tr>
+              <tr><td>Theming</td><td>Customise via Sass variables or CSS custom properties</td><td>Override <code>--bs-primary</code>, etc.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="bs-grid">
+      <div class="container">
+        <div class="reveal">
+          <div class="section-label">Section 5.3 · Grid System</div>
+          <h2 class="section-title" id="bs-grid">Bootstrap Grid System</h2>
+          <p>The Bootstrap grid system is built on CSS Flexbox and divides the viewport into 12 equal columns. Developers assign column widths using class names such as <code>col-md-4</code> (4 of 12 columns = one third width on medium screens). The system is mobile-first: columns stack vertically on small screens by default <cite>(Bootstrap Documentation 2024)</cite>.</p>
+        </div>
+        <div class="reveal" style="margin-top:1.5rem;">
+          <div class="code-block">
+            <div class="code-header"><span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span><span class="code-title">grid-example.html</span><span class="code-lang">HTML + Bootstrap</span></div>
+            <div class="code-body"><pre><span class="cm">&lt;!-- Responsive 3-column property listing --&gt;</span>
+<span class="tg">&lt;div</span> <span class="at">class</span>=<span class="str">"container"</span><span class="tg">&gt;</span>
+  <span class="tg">&lt;div</span> <span class="at">class</span>=<span class="str">"row g-4"</span><span class="tg">&gt;</span>
+
+    <span class="cm">&lt;!-- Full width mobile, half tablet, third desktop --&gt;</span>
+    <span class="tg">&lt;div</span> <span class="at">class</span>=<span class="str">"col-12 col-md-6 col-lg-4"</span><span class="tg">&gt;</span>
+      <span class="tg">&lt;div</span> <span class="at">class</span>=<span class="str">"card h-100 shadow-sm"</span><span class="tg">&gt;</span>
+        <span class="tg">&lt;div</span> <span class="at">class</span>=<span class="str">"card-body"</span><span class="tg">&gt;</span>
+          <span class="tg">&lt;h5</span> <span class="at">class</span>=<span class="str">"card-title"</span><span class="tg">&gt;</span>12 Harbour View Rd<span class="tg">&lt;/h5&gt;</span>
+          <span class="tg">&lt;p</span> <span class="at">class</span>=<span class="str">"card-text text-muted"</span><span class="tg">&gt;</span>4 bed | 2 bath<span class="tg">&lt;/p&gt;</span>
+          <span class="tg">&lt;p</span> <span class="at">class</span>=<span class="str">"fw-bold text-primary fs-5"</span><span class="tg">&gt;</span>$1,850,000<span class="tg">&lt;/p&gt;</span>
+          <span class="tg">&lt;a</span> <span class="at">href</span>=<span class="str">"#"</span> <span class="at">class</span>=<span class="str">"btn btn-primary w-100"</span><span class="tg">&gt;</span>View Details<span class="tg">&lt;/a&gt;</span>
+        <span class="tg">&lt;/div&gt;</span>
+        <span class="tg">&lt;div</span> <span class="at">class</span>=<span class="str">"card-footer text-muted small"</span><span class="tg">&gt;</span>
+          <span class="tg">&lt;span</span> <span class="at">class</span>=<span class="str">"badge bg-success"</span><span class="tg">&gt;</span>For Sale<span class="tg">&lt;/span&gt;</span>
+          Listed 2 days ago
+        <span class="tg">&lt;/div&gt;</span>
+      <span class="tg">&lt;/div&gt;</span>
+    <span class="tg">&lt;/div&gt;</span>
+
+  <span class="tg">&lt;/div&gt;</span>
+<span class="tg">&lt;/div&gt;</span></pre></div>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:2rem;">
+          <h3 style="color:#1F3864;font-weight:700;font-size:1.05rem;margin-bottom:.75rem;">Utility Classes Reference</h3>
+          <table class="data-table">
+            <thead><tr><th>Category</th><th>Utility Class Examples</th><th>What They Do</th></tr></thead>
+            <tbody>
+              <tr><td>Display</td><td><code>d-none, d-flex, d-block, d-grid</code></td><td>Control element display type</td></tr>
+              <tr><td>Spacing</td><td><code>mt-3, mb-2, px-4, py-1, gap-3</code></td><td>Set margin, padding, and gap</td></tr>
+              <tr><td>Typography</td><td><code>text-center, fw-bold, fs-5, fst-italic</code></td><td>Control font weight, size, alignment</td></tr>
+              <tr><td>Colours</td><td><code>bg-primary, text-danger, border-success</code></td><td>Apply theme colours</td></tr>
+              <tr><td>Flex</td><td><code>justify-content-between, align-items-center</code></td><td>Control Flexbox alignment</td></tr>
+              <tr><td>Sizing</td><td><code>w-100, h-auto, mw-100</code></td><td>Control width and height</td></tr>
+              <tr><td>Shadows</td><td><code>shadow-sm, shadow, shadow-lg</code></td><td>Apply box shadows</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>&nbsp;CET138 <span>ePortfolio</span></div>
+          <p class="footer-desc">[Your Full Name Here]<br/>Student ID: [Your Student ID]<br/>CET138 – Full Stack Development<br/>Kent Institute Australia</p>
+        </div>
+        <div>
+          <div class="footer-heading">Sections</div>
+          <ul class="footer-links">
+            <li><a href="fullstack.html">Full Stack Dev</a></li>
+            <li><a href="html.html">HTML</a></li>
+            <li><a href="css-page.html">CSS</a></li>
+            <li><a href="bootstrap.html">Bootstrap</a></li>
+            <li><a href="javascript.html">JavaScript</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Pages</div>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="contact.html">Contact &amp; Location</a></li>
+            <li><a href="references.html">References</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading">Resources</div>
+          <ul class="footer-links">
+            <li><a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs ↗</a></li>
+            <li><a href="https://getbootstrap.com" target="_blank" rel="noopener">Bootstrap ↗</a></li>
+            <li><a href="https://www.w3.org" target="_blank" rel="noopener">W3C ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 [Your Full Name Here] — CET138 ePortfolio</p>
+        <div class="footer-tech"><span>HTML5</span><span>CSS3</span><span>Bootstrap 5</span><span>JS ES6+</span></div>
+      </div>
+    </div>
+  </footer>
+  <button id="backToTop" aria-label="Back to top">↑</button>
+  <script src="../js/main.js"></script>
+</body>
+</html>
