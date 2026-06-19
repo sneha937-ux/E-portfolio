@@ -1,7 +1,7 @@
 /* ============================================================
    CET138 Full Stack Development ePortfolio
    File   : js/main.js
-   Author : [Student Name]
+   Author : Sneha Shah
    Purpose: Navigation, scroll reveal, demos, interactions
    ============================================================ */
 
@@ -210,6 +210,99 @@ window.filterProperties = filterProperties;
 document.addEventListener('DOMContentLoaded', () => {
   filterProperties();
 });
+
+
+/* DEMOS FOR CORE SECTIONS */
+function setActiveStage(id) {
+  ['fsStageFrontend', 'fsStageBackend', 'fsStageDatabase'].forEach(stageId => {
+    document.getElementById(stageId)?.classList.toggle('active', stageId === id);
+  });
+}
+
+function simulateFullStackLogin() {
+  const email = document.getElementById('fsEmail')?.value.trim() || '';
+  const password = document.getElementById('fsPassword')?.value || '';
+  const output = document.getElementById('fsOutput');
+  if (!output) return;
+
+  if (!email || !password) {
+    output.innerHTML = '<strong>Validation:</strong> Email and password are required before the request can be sent.';
+    setActiveStage('fsStageFrontend');
+    return;
+  }
+
+  setActiveStage('fsStageFrontend');
+  output.innerHTML = `<strong>Frontend:</strong> POST /api/login sent with JSON for ${escapeHTML(email)}.`;
+
+  setTimeout(() => {
+    setActiveStage('fsStageBackend');
+    output.innerHTML = '<strong>Backend:</strong> Express route received the request and is checking credentials.';
+  }, 650);
+
+  setTimeout(() => {
+    setActiveStage('fsStageDatabase');
+    output.innerHTML = '<strong>Database:</strong> User record found. Returning id, name, and password hash to backend.';
+  }, 1300);
+
+  setTimeout(() => {
+    setActiveStage('fsStageBackend');
+    output.innerHTML = '<strong>Response:</strong> 200 OK with a signed token. The frontend can now show the dashboard.';
+  }, 1950);
+}
+
+function resetFullStackDemo() {
+  const output = document.getElementById('fsOutput');
+  if (output) output.textContent = 'Ready to send a simulated POST /api/login request.';
+  setActiveStage('');
+}
+
+function handleHtmlDemoSubmit(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const output = document.getElementById('htmlDemoOutput');
+  if (!form.checkValidity() || !output) return;
+
+  const data = new FormData(form);
+  output.innerHTML = `<strong>Form submitted:</strong> ${escapeHTML(data.get('visitorName'))} selected ${escapeHTML(data.get('course'))} for ${escapeHTML(data.get('date'))}.`;
+}
+
+function resetHtmlDemo() {
+  document.getElementById('htmlDemoForm')?.reset();
+  const output = document.getElementById('htmlDemoOutput');
+  if (output) output.textContent = 'Complete the form to see the browser validate required fields.';
+}
+
+function updateCssDemo() {
+  const radius = document.getElementById('cssRadius')?.value || '12px';
+  const theme = document.getElementById('cssTheme')?.value || '#2E5FA3';
+  const card = document.getElementById('cssDemoCard');
+  if (!card) return;
+
+  card.style.borderRadius = radius;
+  card.style.borderColor = theme;
+  card.style.boxShadow = `0 10px 28px ${theme}24`;
+  card.innerHTML = `<strong>CSS variables in action:</strong> border-radius is ${escapeHTML(radius)} and accent colour is ${escapeHTML(theme)}.`;
+}
+
+function setBootstrapDemoView(view) {
+  const grid = document.getElementById('bootstrapDemoGrid');
+  if (!grid) return;
+  grid.classList.remove('one', 'two');
+  if (view === 'one') grid.classList.add('one');
+  if (view === 'two') grid.classList.add('two');
+}
+
+function toggleBootstrapAlert() {
+  document.getElementById('bootstrapAlert')?.classList.toggle('show');
+}
+
+window.simulateFullStackLogin = simulateFullStackLogin;
+window.resetFullStackDemo = resetFullStackDemo;
+window.handleHtmlDemoSubmit = handleHtmlDemoSubmit;
+window.resetHtmlDemo = resetHtmlDemo;
+window.updateCssDemo = updateCssDemo;
+window.setBootstrapDemoView = setBootstrapDemoView;
+window.toggleBootstrapAlert = toggleBootstrapAlert;
 
 
 /* ── SMOOTH ANCHOR SCROLLING ─────────────────────────────────── */

@@ -2,9 +2,9 @@
 
 ## Overview
 
-This is the complete ePortfolio website for CET138 Full Stack Development, Assignment 1 (30% of module mark).
-
 The portfolio demonstrates knowledge and practical skills across five core areas as required by the assessment brief.
+
+**Live Portfolio URL:** [https://snehaproject09.netlify.app/](https://snehaproject09.netlify.app/)
 
 ---
 
@@ -41,6 +41,12 @@ cet138_site/
 ---
 
 ## How to Open
+
+View the hosted portfolio online:
+
+[https://snehaproject09.netlify.app/](https://snehaproject09.netlify.app/)
+
+Or open the project locally:
 
 Simply open `index.html` in any modern web browser. No server required — this is a fully static website.
 
@@ -107,12 +113,13 @@ python3 -m http.server 8080
 
 | Field | Value |
 |-------|-------|
-| Name | [Your Full Name Here] |
-| Student ID | [Your Student ID] |
+| Name | Sneha Shah |
+| Student ID | 250912522 |
 | Module | CET138 – Full Stack Development |
 | Assessment | Assignment 1 – ePortfolio |
 | Weight | 30% of overall module mark |
-| Institution | Kent Institute Australia |
+| Institution | ISMT College Australia |
+| Live URL | https://snehaproject09.netlify.app/ |
 
 ---
 
@@ -129,10 +136,11 @@ python3 -m http.server 8080
 - [x] 18 Harvard-formatted references
 - [x] Fully responsive design
 - [x] Accessible markup (ARIA labels, semantic HTML)
-- [ ] Replace all `[Student Name]` / `[Student ID]` placeholders
-- [ ] Add submission date
-- [ ] Upload to public hosting (GitHub Pages, Netlify, etc.)
+- [x] Replace all name and student ID placeholders
+- [x] Add submission date
+- [x] Upload to public hosting (Netlify)
 
 ---
 
-*© 2026 [Student Name] — CET138 Full Stack Development ePortfolio*
+*© 2026 Sneha Shah — CET138 Full Stack Development ePortfolio*
+

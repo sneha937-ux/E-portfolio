@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Visual presentation, layout, and responsive design. Box model, Flexbox, Grid, animations, and CSS custom properties." />
-  <meta name="author" content="[Student Name]" />
+  <meta name="author" content="Sneha Shah" />
   <title>CSS | CET138 ePortfolio</title>
   <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="../css/style.css" />
@@ -26,7 +26,7 @@
         <a href="bootstrap.html">Bootstrap</a>
         <a href="javascript.html">JavaScript</a>
         <a href="contact.html">Contact</a>
-        <a href="references.html">References</a>
+        
       </nav>
     </div>
   </nav>
@@ -193,6 +193,27 @@
                 <div><div class="box-pulse" aria-label="Pulsing circle"></div><p style="text-align:center;font-size:.72rem;color:#64748B;margin-top:.5rem;">@keyframes pulse</p></div>
                 <div><div class="box-bounce" aria-label="Bouncing box"></div><p style="text-align:center;font-size:.72rem;color:#64748B;margin-top:.5rem;">@keyframes bounce</p></div>
               </div>
+              <div class="demo-form-grid">
+                <div class="demo-field">
+                  <label for="cssRadius">Border radius</label>
+                  <select id="cssRadius" onchange="updateCssDemo()">
+                    <option value="4px">4px</option>
+                    <option value="12px" selected>12px</option>
+                    <option value="28px">28px</option>
+                  </select>
+                </div>
+                <div class="demo-field">
+                  <label for="cssTheme">Colour theme</label>
+                  <select id="cssTheme" onchange="updateCssDemo()">
+                    <option value="#2E5FA3">Blue</option>
+                    <option value="#0E7490">Teal</option>
+                    <option value="#B45309">Amber</option>
+                  </select>
+                </div>
+              </div>
+              <div id="cssDemoCard" class="demo-output" style="border-radius:12px;border-color:#2E5FA3;">
+                <strong>CSS variables in action:</strong> change the controls to update this preview instantly.
+              </div>
             </div>
           </div>
         </div>
@@ -206,7 +227,7 @@
       <div class="footer-grid">
         <div>
           <div class="footer-brand"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#60A5FA" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>&nbsp;CET138 <span>ePortfolio</span></div>
-          <p class="footer-desc">[Your Full Name Here]<br/>Student ID: [Your Student ID]<br/>CET138 – Full Stack Development<br/>Kent Institute Australia</p>
+          <p class="footer-desc">Sneha Shah<br/>Student ID: 250912522<br/>CET138 – Full Stack Development<br/>ISMT College Birtnagar</p>
         </div>
         <div>
           <div class="footer-heading">Sections</div>
@@ -223,7 +244,7 @@
           <ul class="footer-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="contact.html">Contact &amp; Location</a></li>
-            <li><a href="references.html">References</a></li>
+           
             <li><a href="about.html">About</a></li>
           </ul>
         </div>
@@ -237,7 +258,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2026 [Your Full Name Here] — CET138 ePortfolio</p>
+        <p class="footer-copy">© 2026 Sneha Shah — CET138 ePortfolio</p>
         <div class="footer-tech"><span>HTML5</span><span>CSS3</span><span>Bootstrap 5</span><span>JS ES6+</span></div>
       </div>
     </div>
